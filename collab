@@ -1,0 +1,23 @@
+import random
+
+# Ввод с контролем
+n = int(input())
+while n <= 0:
+    n = int(input(""))
+
+a, b = input().split()
+elements = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','W','Rn']
+while a not in elements or b not in elements or elements.index(a) > elements.index(b):
+    if a not in elements and b not in elements:
+        print('Error!')
+    a, b = input("").split()
+
+# Задание 1
+random.seed(42)
+numbers = tuple(random.randint(-n//2, n//2) for _ in range(n))
+print(numbers)
+print(len(set(numbers)))
+
+# Задание 2
+start, end = elements.index(a), elements.index(b)
+print({elements[i]: i+1 for i in range(start, end + 1)})
