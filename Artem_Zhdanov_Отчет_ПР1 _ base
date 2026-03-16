@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int hypo, cathet1, cathet2;
+    std::cout << "hypo: ";
+    std::cin >> hypo;
+    std::cout << "cathet ezvestni: ";
+    std::cin >> cathet1;
+
+    
+    if (cathet1 >= hypo) {
+        std::cout << "ERROR!!!." << std::endl;
+    } else {
+    
+        cathet2 = sqrt(hypo * hypo - cathet1 * cathet1);
+        std::cout << "cathet2 raven: " << cathet2 << std::endl;
+    }
+
+    return 0;
+}
